@@ -40,6 +40,12 @@ uvicorn app.main:app --reload
 The API will be available at `http://localhost:8000`.  
 Interactive docs: `http://localhost:8000/docs`
 
+## Configuration
+
+| Environment Variable | Default | Description |
+|---|---|---|
+| `CORS_ALLOWED_ORIGINS` | `*` | Comma-separated list of allowed origins (e.g. `https://example.com,https://app.example.com`). Defaults to `*` (all origins) for local development. |
+
 ## API Endpoints
 
 | Method | Path | Description |
