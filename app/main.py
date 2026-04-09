@@ -1,4 +1,12 @@
 import os
+import sys
+
+# Ensure the project root is on sys.path so ``from app.*`` absolute imports
+# resolve correctly whether the app is loaded via ``uvicorn app.main:app``
+# (recommended) or run directly as ``python app/main.py``.
+_project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if _project_root not in sys.path:
+    sys.path.insert(0, _project_root)
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
